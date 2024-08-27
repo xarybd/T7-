@@ -1,3 +1,4 @@
+
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
@@ -18,14 +19,16 @@ body {
     width: 100%;
     height: 100%;
     background: url('background.jpg') no-repeat center center;
-    background-size: cover;
+    background-size: cover; /* Ensure the background covers the entire area */
     z-index: -1;
-    animation: moveBackground 20s linear infinite;
+    animation: fluidBackground 20s ease-in-out infinite;
+    background-repeat: no-repeat; /* No repeat for fluid effect */
 }
 
-@keyframes moveBackground {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-10%); }
+@keyframes fluidBackground {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); } /* Slight zoom in */
+    100% { transform: scale(1); } /* Zoom back out */
 }
 
 .content {
@@ -78,13 +81,16 @@ ul li a {
     }
 
     .background-animation {
-        height: 50vh;
-        animation: moveBackgroundMobile 20s linear infinite;
+        height: 100vh;
+        animation: fluidBackgroundMobile 20s ease-in-out infinite;
+        background-size: cover; /* Cover the full area */
+        background-repeat: no-repeat; /* No repeat for fluid effect */
     }
 
-    @keyframes moveBackgroundMobile {
-        0% { transform: translateY(0); }
-        100% { transform: translateY(-10%); }
+    @keyframes fluidBackgroundMobile {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); } /* Slight zoom in */
+        100% { transform: scale(1); } /* Zoom back out */
     }
 
     .content {
@@ -100,8 +106,10 @@ ul li a {
 
 @media only screen and (max-width: 480px) {
     .background-animation {
-        height: 50vh;
-        animation: moveBackgroundMobile 20s linear infinite;
+        height: 100vh;
+        animation: fluidBackgroundMobile 20s ease-in-out infinite;
+        background-size: cover; /* Cover the full area */
+        background-repeat: no-repeat; /* No repeat for fluid effect */
     }
 
     .content {
