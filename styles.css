@@ -1,15 +1,21 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
     background-color: #000;
     color: #f0f0f0;
-    overflow: hidden;
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh; /* Ensure minimum height covers full viewport */
     position: relative;
+    overflow: hidden;
 }
 
 .background-animation {
@@ -19,10 +25,9 @@ body {
     width: 100%;
     height: 100%;
     background: url('background.jpg') no-repeat center center;
-    background-size: cover; /* Ensure the background covers the entire area */
+    background-size: cover;
     z-index: -1;
     animation: fluidBackground 20s ease-in-out infinite;
-    background-repeat: no-repeat; /* No repeat for fluid effect */
 }
 
 @keyframes fluidBackground {
@@ -44,7 +49,7 @@ body {
 }
 
 .logo {
-    max-width: 400px; /* Increased logo size */
+    max-width: 400px; /* Logo size */
     display: block;
     margin: 0 auto 20px; /* Center the logo */
 }
@@ -63,7 +68,7 @@ ul li {
 ul li a {
     color: #f0f0f0;
     text-decoration: none;
-    font-size: 32px; /* Increased text size by 10px */
+    font-size: 32px; /* Increased text size */
     margin-left: 20px;
 }
 
@@ -73,30 +78,13 @@ ul li a {
 
 /* Mobile Styles */
 @media only screen and (max-width: 768px) {
-    body {
-        height: auto;
-        flex-direction: column;
-        justify-content: flex-start;
-        padding: 10px;
+    .content {
+        max-width: 90%; /* Content width adjusted for mobile */
+        padding: 15px;
     }
 
     .background-animation {
-        height: 100vh;
-        animation: fluidBackgroundMobile 20s ease-in-out infinite;
-        background-size: cover; /* Cover the full area */
-        background-repeat: no-repeat; /* No repeat for fluid effect */
-    }
-
-    @keyframes fluidBackgroundMobile {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.1); } /* Slight zoom in */
-        100% { transform: scale(1); } /* Zoom back out */
-    }
-
-    .content {
-        max-width: 100%;
-        padding: 15px;
-        border-radius: 10px;
+        height: 100vh; /* Full viewport height for background */
     }
 
     ul li a {
@@ -105,16 +93,8 @@ ul li a {
 }
 
 @media only screen and (max-width: 480px) {
-    .background-animation {
-        height: 100vh;
-        animation: fluidBackgroundMobile 20s ease-in-out infinite;
-        background-size: cover; /* Cover the full area */
-        background-repeat: no-repeat; /* No repeat for fluid effect */
-    }
-
     .content {
         padding: 10px;
-        border-radius: 10px;
     }
 
     ul li a {
