@@ -44,7 +44,7 @@ body {
 }
 
 .logo {
-    max-width: 250px; /* Increased logo size */
+    max-width: 400px; /* Increased logo size */
     display: block;
     margin: 0 auto 20px; /* Center the logo */
 }
@@ -63,12 +63,12 @@ ul li {
 ul li a {
     color: #f0f0f0;
     text-decoration: none;
-    font-size: 22px; /* Increased text size */
+    font-size: 32px; /* Increased text size by 10px */
     margin-left: 20px;
 }
 
 .icon {
-    max-width: 32px; /* Larger icons */
+    max-width: 42px; /* Larger icons */
 }
 
 /* Mobile Styles */
@@ -100,7 +100,7 @@ ul li a {
     }
 
     ul li a {
-        font-size: 20px;
+        font-size: 30px;
     }
 }
 
@@ -118,6 +118,6 @@ ul li a {
     }
 
     ul li a {
-        font-size: 18px;
+        font-size: 28px;
     }
 }
