@@ -195,3 +195,35 @@ body {
         font-size: 14px;
     }
 }
+
+
+/* Ensure background image scales correctly and maintain blur effect on mobile */
+@media only screen and (max-width: 768px) {
+    .background-animation {
+        background-size: cover;
+        background-position: center; /* Center the background image */
+        height: 100vh; /* Maintain full viewport height */
+        filter: blur(10px); /* Apply blur effect */
+    }
+
+    .content {
+        backdrop-filter: blur(10px); /* Ensure the content has a blur background */
+        background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background for better readability */
+        padding: 15px; /* Add padding for content */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .background-animation {
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        filter: blur(10px);
+    }
+
+    .content {
+        backdrop-filter: blur(10px);
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 15px;
+    }
+}
